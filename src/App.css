@@ -1,0 +1,118 @@
+/* --- Global Resets & Variables --- */
+:root {
+  --primary-indigo: #4f46e5;
+  --secondary-blue: #2563eb;
+  --deep-navy: #030712;
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  background-color: #ffffff;
+}
+
+#root {
+  max-width: 100%; /* Overriding 1280px for full-width sections */
+  margin: 0 auto;
+  text-align: left; /* Aligned for better enterprise readability */
+}
+
+/* --- Typography & Headings --- */
+h1, h2, h3, h4 {
+  margin: 0;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+/* --- Section Formatting --- */
+section {
+  position: relative;
+  width: 100%;
+}
+
+.max-w-7xl {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* --- Logo & Animations (Enhanced) --- */
+.logo {
+  height: 4em;
+  padding: 1em;
+  will-change: filter;
+  transition: all 400ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 2em rgba(79, 70, 229, 0.4));
+  transform: scale(1.05);
+}
+
+@keyframes logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .logo-react {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+/* --- Card & Element Styling --- */
+.card {
+  padding: 2.5rem;
+  border-radius: 1.5rem;
+  background: white;
+  border: 1px solid #f3f4f6;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Glassmorphism Utilities --- */
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+}
+
+/* --- Form Elements --- */
+input, textarea, select {
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+/* --- Scroll Padding (Prevents Header Overlap) --- */
+.scroll-mt-20 {
+  scroll-margin-top: 5rem;
+}
+
+/* --- Selection Color --- */
+::selection {
+  background: rgba(79, 70, 229, 0.1);
+  color: #4f46e5;
+}
+
+/* --- Media Queries --- */
+@media (max-width: 768px) {
+  #root {
+    padding: 0;
+  }
+  
+  .logo {
+    height: 3em;
+  }
+}
