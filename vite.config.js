@@ -10,5 +10,5 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: "/Click100 Landing/",
+  base: "/Click100-Landing/",
 })
