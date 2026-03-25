@@ -1,41 +1,5 @@
-// const Footer = () => {
-//   return (
-//     <footer className="bg-indigo-700 text-white py-12">
-//       <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8">
-//         <div>
-//           <h3 className="text-xl font-bold mb-4">Click100 GCC</h3>
-//           <p>
-//             Building scalable Global Capability Centers with AI-driven recruitment innovation.
-//           </p>
-//         </div>
-
-//         <div>
-//           <h4 className="font-semibold mb-4">Quick Links</h4>
-//           <ul className="space-y-2">
-//             <li><a href="#about" className="hover:underline">About</a></li>
-//             <li><a href="#solutions" className="hover:underline">Solutions</a></li>
-//             <li><a href="#products" className="hover:underline">Products</a></li>
-//             <li><a href="#contact" className="hover:underline">Contact</a></li>
-//           </ul>
-//         </div>
-
-//         <div>
-//           <h4 className="font-semibold mb-4">Follow Us</h4>
-//           <p>LinkedIn | Twitter | Facebook</p>
-//         </div>
-//       </div>
-
-//       <div className="text-center mt-10 text-indigo-200">
-//         © 2025 Click100 GCC. All rights reserved.
-//       </div>
-//     </footer>
-//   );
-// };
-
-// export default Footer;
-import React from "react";
 import { motion } from "framer-motion";
-import { Linkedin, Facebook, Instagram, Globe, Mail, ChevronRight } from "lucide-react";
+import { ChevronRight, Facebook, Globe, Instagram, Linkedin } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -56,26 +20,25 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-[#030712] text-white pt-24 pb-12 relative overflow-hidden">
-      {/* Subtle Indigo Background Glow */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-[300px] bg-indigo-600/10 blur-[120px] rounded-full" />
+    <footer className="relative overflow-hidden bg-[#030712] pb-10 pt-16 text-white md:pt-20">
+      <div className="absolute bottom-0 left-1/2 h-[300px] w-full -translate-x-1/2 rounded-full bg-indigo-600/10 blur-[120px]" />
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
-          
-          {/* Column 1: Brand Info */}
+      <div className="relative z-10 mx-auto max-w-7xl px-6">
+        <div className="mb-12 grid grid-cols-1 gap-8 md:mb-14 md:grid-cols-2 md:gap-10 lg:grid-cols-4">
           <div className="space-y-6">
             <div className="flex items-center gap-2">
-              <div className="bg-indigo-600 p-2 rounded-lg">
+              <div className="rounded-lg bg-indigo-600 p-2">
                 <Globe className="text-white" size={24} />
               </div>
               <h3 className="text-2xl font-black tracking-tighter">
                 Click100<span className="text-indigo-500">GCC</span>
               </h3>
             </div>
-            <p className="text-gray-400 leading-relaxed font-medium">
+
+            <p className="font-medium leading-relaxed text-gray-400">
               Architecting future-ready Global Capability Centers with AI-driven recruitment ecosystems and borderless talent strategies.
             </p>
+
             <div className="flex gap-4">
               {socialLinks.map((social, i) => (
                 <motion.a
@@ -84,7 +47,7 @@ const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ y: -5, scale: 1.1 }}
-                  className="w-10 h-10 bg-white/5 border border-white/10 rounded-full flex items-center justify-center hover:bg-indigo-600 hover:border-indigo-600 transition-all duration-300"
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 transition-all duration-300 hover:border-indigo-600 hover:bg-indigo-600"
                   aria-label={social.label}
                 >
                   {social.icon}
@@ -93,20 +56,22 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Column 2: Quick Links */}
           <div>
-            <h4 className="text-lg font-bold mb-8 relative inline-block">
+            <h4 className="relative mb-6 inline-block text-lg font-bold">
               Quick Navigation
-              <span className="absolute -bottom-2 left-0 w-8 h-1 bg-indigo-500 rounded-full" />
+              <span className="absolute -bottom-2 left-0 h-1 w-8 rounded-full bg-indigo-500" />
             </h4>
             <ul className="space-y-4">
               {quickLinks.map((link, i) => (
                 <li key={i}>
-                  <a 
-                    href={link.href} 
-                    className="text-gray-400 hover:text-indigo-400 flex items-center gap-2 transition-colors group"
+                  <a
+                    href={link.href}
+                    className="group flex items-center gap-2 text-gray-400 transition-colors hover:text-indigo-400"
                   >
-                    <ChevronRight size={14} className="opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <ChevronRight
+                      size={14}
+                      className="opacity-0 transition-opacity group-hover:opacity-100"
+                    />
                     {link.name}
                   </a>
                 </li>
@@ -114,50 +79,54 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Column 3: Platform Modules */}
           <div>
-            <h4 className="text-lg font-bold mb-8 relative inline-block">
+            <h4 className="relative mb-6 inline-block text-lg font-bold">
               Click100 Modules
-              <span className="absolute -bottom-2 left-0 w-8 h-1 bg-indigo-500 rounded-full" />
+              <span className="absolute -bottom-2 left-0 h-1 w-8 rounded-full bg-indigo-500" />
             </h4>
-            <ul className="space-y-4 text-gray-400 font-medium">
-              <li className="hover:text-white transition-colors cursor-default">Enterprise ATS</li>
-              <li className="hover:text-white transition-colors cursor-default">AI Resume Screening</li>
-              <li className="hover:text-white transition-colors cursor-default">Integrated BGV Module</li>
-              <li className="hover:text-white transition-colors cursor-default">Recruiter Analytics</li>
+            <ul className="space-y-4 font-medium text-gray-400">
+              <li className="cursor-default transition-colors hover:text-white">Enterprise ATS</li>
+              <li className="cursor-default transition-colors hover:text-white">AI Resume Screening</li>
+              <li className="cursor-default transition-colors hover:text-white">Integrated BGV Module</li>
+              <li className="cursor-default transition-colors hover:text-white">Recruiter Analytics</li>
             </ul>
           </div>
 
-          {/* Column 4: Newsletter/CTA */}
           <div>
-            <h4 className="text-lg font-bold mb-8 relative inline-block">
+            <h4 className="relative mb-6 inline-block text-lg font-bold">
               Stay Informed
-              <span className="absolute -bottom-2 left-0 w-8 h-1 bg-indigo-500 rounded-full" />
+              <span className="absolute -bottom-2 left-0 h-1 w-8 rounded-full bg-indigo-500" />
             </h4>
-            <p className="text-gray-400 text-sm mb-6">Subscribe to our newsletter for GCC insights and AI trends.</p>
+            <p className="mb-6 text-sm text-gray-400">
+              Subscribe to our newsletter for GCC insights and AI trends.
+            </p>
             <form className="flex flex-col gap-3">
-              <input 
-                type="email" 
-                placeholder="Work Email Address" 
-                className="bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all"
+              <input
+                type="email"
+                placeholder="Work Email Address"
+                className="rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm transition-all focus:outline-none focus:ring-2 focus:ring-indigo-500"
               />
-              <button className="bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-3 rounded-xl transition-all shadow-lg shadow-indigo-900/20">
+              <button className="rounded-xl bg-indigo-600 py-3 font-bold text-white shadow-lg shadow-indigo-900/20 transition-all hover:bg-indigo-500">
                 Subscribe
               </button>
             </form>
           </div>
-
         </div>
 
-        {/* Bottom Bar */}
-        <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
-          <p className="text-gray-500 text-sm">
-            © {currentYear} Click100 GCC. All rights reserved.
+        <div className="flex flex-col items-center justify-between gap-6 border-t border-white/5 pt-8 md:flex-row md:pt-10">
+          <p className="text-sm text-gray-500">
+            (c) {currentYear} Click100 GCC. All rights reserved.
           </p>
           <div className="flex gap-8 text-xs font-bold uppercase tracking-widest text-gray-600">
-            <a href="#" className="hover:text-indigo-400 transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-indigo-400 transition-colors">Terms of Service</a>
-            <a href="#" className="hover:text-indigo-400 transition-colors">Cookie Policy</a>
+            <a href="#" className="transition-colors hover:text-indigo-400">
+              Privacy Policy
+            </a>
+            <a href="#" className="transition-colors hover:text-indigo-400">
+              Terms of Service
+            </a>
+            <a href="#" className="transition-colors hover:text-indigo-400">
+              Cookie Policy
+            </a>
           </div>
         </div>
       </div>

@@ -42,7 +42,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-[#030712]"
+      className="relative flex min-h-[78vh] items-center justify-center overflow-hidden bg-[#030712] px-6 pb-16 pt-28 md:min-h-[82vh] md:pb-20 md:pt-32"
     >
       {/* 1. Background Video Layer */}
       <div className="absolute inset-0 z-0">
@@ -61,14 +61,14 @@ const Hero = () => {
       </div>
 
       {/* 2. Content Layer */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
+      <div className="relative z-10 mx-auto max-w-6xl text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
           {/* Small Badge */}
-          <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-sm font-medium mb-8 backdrop-blur-md">
+          <span className="mb-6 inline-flex items-center gap-2 rounded-full border border-indigo-500/20 bg-indigo-500/10 px-3 py-1 text-sm font-medium text-indigo-400 backdrop-blur-md">
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
@@ -76,22 +76,22 @@ const Hero = () => {
             Next-Gen Recruitment AI
           </span>
 
-          <h1 className="text-4xl md:text-7xl font-extrabold leading-[1.1] tracking-tight text-white mb-6">
+          <h1 className="mb-5 text-4xl font-extrabold leading-[1.08] tracking-tight text-white md:text-6xl xl:text-7xl">
             Building Future-Ready GCCs <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-blue-400">
               with AI Intelligence
             </span>
           </h1>
 
-          <p className="mt-6 text-lg md:text-xl max-w-2xl mx-auto text-gray-300 leading-relaxed">
-            Scale your Global Capability Centers with intelligent automation. 
+          <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-gray-300 md:text-lg">
+            Scale your Global Capability Centers with intelligent automation.
             We transform hiring using advanced ATS platforms and AI-driven candidate matching.
           </p>
 
-          <div className="mt-12 flex justify-center gap-4 flex-wrap">
+          <div className="mt-10 flex flex-wrap justify-center gap-4">
             <a
               href="#solutions"
-              className="group bg-indigo-600 text-white px-8 py-4 rounded-full font-bold hover:bg-indigo-500 transition-all shadow-lg shadow-indigo-500/25 flex items-center gap-2"
+              className="group flex items-center gap-2 rounded-full bg-indigo-600 px-7 py-3 text-white font-bold shadow-lg shadow-indigo-500/25 transition-all hover:bg-indigo-500"
             >
               Explore Solutions
               <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -99,7 +99,7 @@ const Hero = () => {
             
             <a
               href="#demo"
-              className="bg-white/5 text-white border border-white/10 backdrop-blur-md px-8 py-4 rounded-full font-bold hover:bg-white/10 transition-all flex items-center gap-2"
+              className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-7 py-3 text-white font-bold backdrop-blur-md transition-all hover:bg-white/10"
             >
               <Play className="w-4 h-4 fill-white" />
               Watch Demo

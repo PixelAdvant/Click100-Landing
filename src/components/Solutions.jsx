@@ -95,9 +95,9 @@ const Solutions = () => {
   };
 
   return (
-    <section id="solutions" className="py-32 bg-white relative overflow-hidden">
+    <section id="solutions" className="relative overflow-hidden bg-white py-20 md:py-24">
       {/* Subtle Background Accent */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-indigo-50/50 rounded-full blur-[120px] -z-0" />
+      <div className="absolute top-1/2 left-1/2 -z-0 h-[760px] w-[760px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-indigo-50/50 blur-[120px]" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <motion.div
@@ -117,28 +117,28 @@ const Solutions = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
+          className="grid gap-6 md:grid-cols-2 lg:grid-cols-4"
         >
           {solutions.map((item, index) => (
             <motion.div 
               key={index} 
               variants={cardVariants}
               whileHover={{ y: -12 }}
-              className="p-8 rounded-2xl border border-gray-100 bg-white shadow-xl shadow-gray-200/50 hover:shadow-2xl hover:shadow-indigo-500/10 transition-all duration-300 flex flex-col h-full group"
+              className="group flex h-full flex-col rounded-2xl border border-gray-100 bg-white p-6 shadow-xl shadow-gray-200/50 transition-all duration-300 hover:shadow-2xl hover:shadow-indigo-500/10 md:p-7"
             >
-              <div className="w-16 h-16 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center mb-6 group-hover:bg-indigo-600 group-hover:text-white transition-colors duration-500">
+              <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-xl bg-indigo-50 text-indigo-600 transition-colors duration-500 group-hover:bg-indigo-600 group-hover:text-white">
                 {item.icon}
               </div>
 
-              <h3 className="text-xl font-bold text-gray-900 mb-4 tracking-tight group-hover:text-indigo-600 transition-colors">
+              <h3 className="mb-3 text-lg font-bold tracking-tight text-gray-900 transition-colors group-hover:text-indigo-600 md:text-xl">
                 {item.title}
               </h3>
 
-              <p className="text-gray-600 leading-relaxed mb-8 flex-grow">
+              <p className="mb-6 flex-grow text-gray-600 leading-relaxed">
                 {item.desc}
               </p>
 
-              <div className="space-y-3 mb-8">
+              <div className="mb-6 space-y-2.5">
                 {item.features.map((feature, fIndex) => (
                   <div key={fIndex} className="flex items-center gap-2 text-sm text-gray-500 font-medium">
                     <CheckCircle2 size={16} className="text-indigo-500" />
@@ -160,31 +160,31 @@ const Solutions = () => {
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          className="mt-24 p-12 rounded-[2rem] bg-indigo-900 text-white flex flex-col lg:flex-row items-center justify-between gap-12 overflow-hidden relative shadow-2xl"
+          className="relative mt-16 flex flex-col items-center justify-between gap-8 overflow-hidden rounded-[2rem] bg-indigo-900 p-8 text-white shadow-2xl lg:flex-row md:mt-20 md:gap-10 md:p-10"
         >
           <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -mr-32 -mt-32 blur-3xl" />
           
           <div className="lg:w-1/2 relative z-10">
             <h4 className="text-indigo-300 font-bold uppercase tracking-widest text-xs mb-4">The GCC Advantage</h4>
-            <h3 className="text-3xl md:text-4xl font-bold mb-6">Built for Scale, Designed for Efficiency</h3>
-            <p className="text-indigo-100/80 text-lg leading-relaxed mb-8">
+            <h3 className="mb-5 text-2xl font-bold md:text-3xl">Built for Scale, Designed for Efficiency</h3>
+            <p className="mb-6 text-base leading-relaxed text-indigo-100/80 md:mb-8 md:text-lg">
               We don't just provide software; we provide the strategic infrastructure required to run a global operation. Our AI models are fine-tuned for niche technical roles, ensuring your GCC is staffed with top-tier talent from day one.
             </p>
-            <div className="grid grid-cols-2 gap-8">
+            <div className="grid grid-cols-2 gap-6">
               <div>
-                <p className="text-4xl font-bold text-white mb-1">60%</p>
+                <p className="mb-1 text-3xl font-bold text-white md:text-4xl">60%</p>
                 <p className="text-indigo-200 text-sm">Faster Time-to-Hire</p>
               </div>
               <div>
-                <p className="text-4xl font-bold text-white mb-1">45%</p>
+                <p className="mb-1 text-3xl font-bold text-white md:text-4xl">45%</p>
                 <p className="text-indigo-200 text-sm">Operational Cost Savings</p>
               </div>
             </div>
           </div>
 
           <div className="lg:w-1/3 w-full">
-            <div className="bg-white/10 backdrop-blur-md p-8 rounded-2xl border border-white/10">
-              <h5 className="font-bold text-xl mb-6">Ready to transform your global footprint?</h5>
+            <div className="rounded-2xl border border-white/10 bg-white/10 p-6 backdrop-blur-md">
+              <h5 className="mb-5 text-xl font-bold">Ready to transform your global footprint?</h5>
               <form className="space-y-4">
                 <input type="email" placeholder="Enter your work email" className="w-full bg-white/20 border border-white/20 rounded-lg px-4 py-3 placeholder:text-indigo-100 outline-none focus:bg-white/30 transition-all" />
                 <button className="w-full bg-white text-indigo-900 font-bold py-3 rounded-lg hover:bg-indigo-50 transition-colors shadow-lg shadow-indigo-950/20">

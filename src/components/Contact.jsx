@@ -1,63 +1,17 @@
-// import SectionTitle from "./SectionTitle";
-
-// const Contact = () => {
-//   return (
-//     <section id="contact" className="py-24 bg-gray-50">
-//       <div className="max-w-4xl mx-auto px-6">
-//         <SectionTitle
-//           title="Contact Us"
-//           subtitle="Let’s build your future-ready GCC together."
-//         />
-
-//         <form className="bg-white p-10 rounded-xl shadow-lg space-y-6">
-//           <input
-//             type="text"
-//             placeholder="Name"
-//             className="w-full border p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-600"
-//           />
-//           <input
-//             type="email"
-//             placeholder="Email"
-//             className="w-full border p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-600"
-//           />
-//           <input
-//             type="text"
-//             placeholder="Company"
-//             className="w-full border p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-600"
-//           />
-//           <textarea
-//             rows="4"
-//             placeholder="Message"
-//             className="w-full border p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-600"
-//           ></textarea>
-
-//           <button className="w-full bg-indigo-600 text-white py-3 rounded-lg hover:bg-indigo-700 transition">
-//             Submit
-//           </button>
-
-//           <div className="text-center text-gray-600 mt-6">
-//             Email: info@click100gcc.com | Phone: +1 (000) 000-0000
-//           </div>
-//         </form>
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default Contact;
-import React from "react";
 import { motion } from "framer-motion";
+import { Globe, Mail, MessageSquare, Phone, Send } from "lucide-react";
 import SectionTitle from "./SectionTitle";
-import { Mail, Phone, MapPin, Send, Globe, MessageSquare } from "lucide-react";
 
 const Contact = () => {
   return (
-    <section id="contact" className="relative py-32 overflow-hidden bg-gray-50 scroll-mt-20">
-      {/* Visual background accents to match the Hero section energy */}
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-indigo-100/40 rounded-full blur-[120px] -mr-48 -mt-48 opacity-60" />
-      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-blue-100/40 rounded-full blur-[120px] -ml-48 -mb-48 opacity-60" />
+    <section
+      id="contact"
+      className="relative overflow-hidden bg-gray-50 py-20 scroll-mt-20 md:py-24"
+    >
+      <div className="absolute top-0 right-0 h-[520px] w-[520px] rounded-full bg-indigo-100/40 blur-[120px] -mr-40 -mt-40 opacity-60" />
+      <div className="absolute bottom-0 left-0 h-[520px] w-[520px] rounded-full bg-blue-100/40 blur-[120px] -ml-40 -mb-40 opacity-60" />
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+      <div className="relative z-10 mx-auto max-w-7xl px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -66,22 +20,23 @@ const Contact = () => {
         >
           <SectionTitle
             title="Get In Touch"
-            subtitle="Ready to architect your Global Capability Center? Let’s design your future-ready ecosystem today."
+            subtitle="Ready to architect your Global Capability Center? Let's design your future-ready ecosystem today."
           />
         </motion.div>
 
-        <div className="grid lg:grid-cols-12 gap-12 mt-16">
-          {/* Left Column: Contact Information */}
-          <motion.div 
+        <div className="mt-12 grid gap-8 lg:grid-cols-12 md:mt-14 md:gap-10">
+          <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="lg:col-span-5 space-y-8"
+            className="space-y-6 lg:col-span-5"
           >
             <div>
-              <h3 className="text-3xl font-black text-gray-900 mb-6">Partner with GCC Architects</h3>
-              <p className="text-gray-600 text-lg leading-relaxed mb-8">
-                Connect with our strategic consultants to explore how the **Click100** platform can unify your ATS, BGV, and talent analytics into a single high-performance operation.
+              <h3 className="mb-5 text-2xl font-black text-gray-900 md:text-3xl">
+                Partner with GCC Architects
+              </h3>
+              <p className="mb-6 text-base leading-relaxed text-gray-600 md:text-lg">
+                Connect with our strategic consultants to explore how the Click100 platform can unify your ATS, BGV, and talent analytics into a single high-performance operation.
               </p>
             </div>
 
@@ -89,72 +44,86 @@ const Contact = () => {
               {[
                 { icon: Mail, label: "Email Us", val: "info@pixeladvant.com" },
                 { icon: Phone, label: "Call Us", val: "+1 (000) 000-0000" },
-                { icon: Globe, label: "Global Presence", val: "USA | Bangalore | Noida | Delhi" }
+                { icon: Globe, label: "Global Presence", val: "USA | Bangalore | Noida | Delhi" },
               ].map((item, i) => (
-                <div key={i} className="flex items-center gap-5 p-4 bg-white rounded-2xl shadow-sm border border-gray-100 hover:border-indigo-200 transition-colors group">
-                  <div className="w-12 h-12 bg-indigo-50 text-indigo-600 rounded-xl flex items-center justify-center group-hover:bg-indigo-600 group-hover:text-white transition-all duration-300">
+                <div
+                  key={i}
+                  className="group flex items-center gap-5 rounded-2xl border border-gray-100 bg-white p-4 shadow-sm transition-colors hover:border-indigo-200"
+                >
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-indigo-50 text-indigo-600 transition-all duration-300 group-hover:bg-indigo-600 group-hover:text-white">
                     <item.icon size={24} />
                   </div>
                   <div>
-                    <p className="text-xs font-bold uppercase tracking-widest text-gray-400">{item.label}</p>
-                    <p className="text-gray-900 font-bold">{item.val}</p>
+                    <p className="text-xs font-bold uppercase tracking-widest text-gray-400">
+                      {item.label}
+                    </p>
+                    <p className="font-bold text-gray-900">{item.val}</p>
                   </div>
                 </div>
               ))}
             </div>
 
-            <div className="p-8 bg-indigo-900 rounded-[2rem] text-white relative overflow-hidden shadow-2xl">
+            <div className="relative overflow-hidden rounded-[2rem] bg-indigo-900 p-6 text-white shadow-2xl md:p-8">
               <div className="absolute top-0 right-0 p-4 opacity-10">
                 <MessageSquare size={100} />
               </div>
-              <h4 className="text-xl font-bold mb-3 relative z-10 font-serif italic italic">"The future of work is borderless."</h4>
-              <p className="text-indigo-200 text-sm relative z-10 leading-relaxed">
+              <h4 className="relative z-10 mb-3 font-serif text-xl font-bold italic">
+                "The future of work is borderless."
+              </h4>
+              <p className="relative z-10 text-sm leading-relaxed text-indigo-200">
                 Join the league of enterprises scaling their operations with intelligence and precision.
               </p>
             </div>
           </motion.div>
 
-          {/* Right Column: Contact Form */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             className="lg:col-span-7"
           >
-            <form className="bg-white p-8 md:p-12 rounded-[2.5rem] shadow-2xl shadow-indigo-900/10 border border-gray-100 space-y-6 relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-indigo-50 rounded-full -mr-16 -mt-16" />
-              
-              <div className="grid md:grid-cols-2 gap-6 relative z-10">
+            <form className="relative space-y-6 overflow-hidden rounded-[2.5rem] border border-gray-100 bg-white p-6 shadow-2xl shadow-indigo-900/10 md:p-8">
+              <div className="absolute top-0 right-0 h-32 w-32 rounded-full bg-indigo-50 -mr-16 -mt-16" />
+
+              <div className="relative z-10 grid gap-6 md:grid-cols-2">
                 <div className="space-y-2">
-                  <label className="text-xs font-black uppercase tracking-widest text-gray-400 ml-1">Full Name</label>
+                  <label className="ml-1 text-xs font-black uppercase tracking-widest text-gray-400">
+                    Full Name
+                  </label>
                   <input
                     type="text"
                     placeholder="John Doe"
-                    className="w-full bg-gray-50 border-none p-4 rounded-xl focus:ring-2 focus:ring-indigo-600 outline-none transition-all placeholder:text-gray-300"
+                    className="w-full rounded-xl border-none bg-gray-50 p-4 outline-none transition-all placeholder:text-gray-300 focus:ring-2 focus:ring-indigo-600"
                   />
                 </div>
                 <div className="space-y-2">
-                  <label className="text-xs font-black uppercase tracking-widest text-gray-400 ml-1">Work Email</label>
+                  <label className="ml-1 text-xs font-black uppercase tracking-widest text-gray-400">
+                    Work Email
+                  </label>
                   <input
                     type="email"
                     placeholder="john@enterprise.com"
-                    className="w-full bg-gray-50 border-none p-4 rounded-xl focus:ring-2 focus:ring-indigo-600 outline-none transition-all placeholder:text-gray-300"
+                    className="w-full rounded-xl border-none bg-gray-50 p-4 outline-none transition-all placeholder:text-gray-300 focus:ring-2 focus:ring-indigo-600"
                   />
                 </div>
               </div>
 
-              <div className="space-y-2 relative z-10">
-                <label className="text-xs font-black uppercase tracking-widest text-gray-400 ml-1">Company & Industry</label>
+              <div className="relative z-10 space-y-2">
+                <label className="ml-1 text-xs font-black uppercase tracking-widest text-gray-400">
+                  Company & Industry
+                </label>
                 <input
                   type="text"
                   placeholder="Pixel Advant | IT Services"
-                  className="w-full bg-gray-50 border-none p-4 rounded-xl focus:ring-2 focus:ring-indigo-600 outline-none transition-all placeholder:text-gray-300"
+                  className="w-full rounded-xl border-none bg-gray-50 p-4 outline-none transition-all placeholder:text-gray-300 focus:ring-2 focus:ring-indigo-600"
                 />
               </div>
 
-              <div className="space-y-2 relative z-10">
-                <label className="text-xs font-black uppercase tracking-widest text-gray-400 ml-1">Engagement Interest</label>
-                <select className="w-full bg-gray-50 border-none p-4 rounded-xl focus:ring-2 focus:ring-indigo-600 outline-none text-gray-400 font-medium cursor-pointer">
+              <div className="relative z-10 space-y-2">
+                <label className="ml-1 text-xs font-black uppercase tracking-widest text-gray-400">
+                  Engagement Interest
+                </label>
+                <select className="w-full cursor-pointer rounded-xl border-none bg-gray-50 p-4 font-medium text-gray-400 outline-none focus:ring-2 focus:ring-indigo-600">
                   <option>Select an option</option>
                   <option>Build-Operate-Transfer (BOT)</option>
                   <option>Managed GCC Operations</option>
@@ -163,24 +132,26 @@ const Contact = () => {
                 </select>
               </div>
 
-              <div className="space-y-2 relative z-10">
-                <label className="text-xs font-black uppercase tracking-widest text-gray-400 ml-1">Your Requirements</label>
+              <div className="relative z-10 space-y-2">
+                <label className="ml-1 text-xs font-black uppercase tracking-widest text-gray-400">
+                  Your Requirements
+                </label>
                 <textarea
                   rows="4"
                   placeholder="Tell us about your global scaling goals..."
-                  className="w-full bg-gray-50 border-none p-4 rounded-xl focus:ring-2 focus:ring-indigo-600 outline-none transition-all placeholder:text-gray-300"
+                  className="w-full rounded-xl border-none bg-gray-50 p-4 outline-none transition-all placeholder:text-gray-300 focus:ring-2 focus:ring-indigo-600"
                 ></textarea>
               </div>
 
-              <motion.button 
+              <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="w-full bg-indigo-600 text-white py-5 rounded-2xl font-black text-lg shadow-xl shadow-indigo-200 hover:bg-indigo-700 transition-all flex items-center justify-center gap-3"
+                className="flex w-full items-center justify-center gap-3 rounded-2xl bg-indigo-600 py-4 text-lg font-black text-white shadow-xl shadow-indigo-200 transition-all hover:bg-indigo-700"
               >
                 REQUEST STRATEGIC AUDIT <Send size={20} />
               </motion.button>
 
-              <p className="text-center text-gray-400 text-xs font-medium relative z-10">
+              <p className="relative z-10 text-center text-xs font-medium text-gray-400">
                 By submitting, you agree to our privacy policy and secure data processing.
               </p>
             </form>
